@@ -33,7 +33,7 @@ html, body {
         max-width: 100%;
     }
 
-    @media (max-width: 400px) {
+    @media (max-width: 900px) {
         margin-bottom: 20px;
     }
 }
@@ -51,8 +51,17 @@ html, body {
         vertical-align: bottom;
         margin: 0 4px;
         text-align: center;
+        @media (max-width: 500px) {
+            min-width: 22px;
+            min-height: 35px;
+            font-size: 28px;
+        }
         &.space {
             border: none;
+            @media (max-width: 900px) {
+                display: block;
+                min-height: 10px;
+            }
         }
     }
 }
