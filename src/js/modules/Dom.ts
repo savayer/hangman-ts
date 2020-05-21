@@ -18,7 +18,7 @@ class Dom {
             if (letter === ' ') {
                 span.classList.add('space')                
             } else {
-                span.dataset.id = letter.charCodeAt(0).toString()
+                span.dataset.id = letter.toLowerCase().charCodeAt(0).toString()
             }
 
             this.puzzle.appendChild(span)
@@ -75,7 +75,7 @@ class Dom {
     }
 
     private checkWin(): void {
-        if (document.querySelectorAll('.guessed').length === this.word.length) {
+        if (document.querySelectorAll('.guessed').length === this.word.replace(/ +/g, '').length) {
             this.game = false
             alert('Ты выиграл! Нажимай "Начать игру"')
         }
