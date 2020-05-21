@@ -28,6 +28,14 @@ html, body {
         bottom: 0;
         position: absolute;
     }
+
+    img {
+        max-width: 100%;
+    }
+
+    @media (max-width: 400px) {
+        margin-bottom: 20px;
+    }
 }
 
 .word {
@@ -39,6 +47,7 @@ html, body {
         color: #fff;
         display: inline-block;
         min-width: 35px;
+        min-height: 50px;
         vertical-align: bottom;
         margin: 0 4px;
         text-align: center;
