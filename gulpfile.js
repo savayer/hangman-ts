@@ -69,7 +69,7 @@ gulp.task("styles", () => {
         /* .pipe(gulpif(production, rename({
             suffix: ".min"
         }))) */
-        .pipe(gulp.dest('./dist/css/'))
+        .pipe(gulp.dest('./dist/styles/'))
         .pipe(browserSync.stream());
 });
 
@@ -82,7 +82,7 @@ gulp.task('serve', () => {
 
     gulp.watch(['./src/*.html'], gulp.parallel('html'));
     gulp.watch(['./src/styles/*.scss'], gulp.parallel('styles'));
-    gulp.watch(['./src/js/**/*.ts', './index.js'], gulp.parallel('scripts'));
+    gulp.watch(['./src/js/**/*.ts'], gulp.parallel('scripts'));
 })
 
 gulp.task('prod', gulp.series(

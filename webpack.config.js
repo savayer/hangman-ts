@@ -1,5 +1,4 @@
 const path = require('path');
-const webpack = require("webpack");
 
 const config = {
     entry: './src/js/index.ts',
@@ -18,23 +17,8 @@ const config = {
         },
         extensions: [ '.tsx', '.ts', '.js' ],
     },
-    plugins: [
-        new webpack.DefinePlugin({
-            "process.env.SITE_URL": JSON.stringify("http://localhost:9000")
-        })
-    ],
     module: {
         rules: [
-            /* {
-                test: /\.js$/,
-                exclude: /(node_modules)/,
-                use: {
-                    loader: require.resolve("babel-loader"),
-                    options: {
-                        presets: ['@babel/preset-env']
-                    }
-                }
-            }, */
             { 
                 test: /\.tsx?$/, 
                 exclude: /(node_modules)/,

@@ -1,3 +1,3 @@
 export default function test(x: number): void {
-    alert(x)
+    console.log(x)
 }
