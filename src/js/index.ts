@@ -1,17 +1,11 @@
-import test from './modules/test'
+import * as data from '../../db.json'
+import getRandomWord from './modules/getRandomWord'
+import app from './modules/Dom'
 
-class Tester {
-    name: string;
-
-    constructor(name: string) {
-        this.name = name
-    }
-
-    greet() {
-        console.log('hello ' + this.name)
-    }
-}
-
-const t = new Tester('Nikola')
-
-t.greet()
+document.querySelector('#start_game').addEventListener('click', () => {
+    const word: string = getRandomWord(data.words)
+    
+    app.clear()
+    app.seperateByWords(word)
+    app.generateAlphabet()
+})

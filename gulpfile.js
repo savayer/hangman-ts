@@ -83,6 +83,7 @@ gulp.task('serve', () => {
     gulp.watch(['./src/*.html'], gulp.parallel('html'));
     gulp.watch(['./src/styles/*.scss'], gulp.parallel('styles'));
     gulp.watch(['./src/js/**/*.ts'], gulp.parallel('scripts'));
+    gulp.watch(['./src/img/**/*.png'], gulp.parallel('img'));
 })
 
 gulp.task('prod', gulp.series(
