@@ -35,17 +35,18 @@ class Dom {
             button.classList.add('letter')
             button.dataset.button_id = letterStart.toString()
             button.innerText = String.fromCharCode(letterStart).toUpperCase()
-            
-            button.addEventListener('click', () => {
-                if (!this.game) return false;
-                const id: string = button.dataset.button_id
-                this.findLettersInGuessedWord(id)
-
-                button.classList.add('disabled')
-            })
 
             this.alphabet.appendChild(button)
         }
+
+        this.alphabet.addEventListener('click', (e) => {
+            const button = e.target as HTMLButtonElement
+            console.log(button)
+            if (button.dataset.button_id && !button.classList.contains('disabled')) {
+                this.findLettersInGuessedWord(button.dataset.button_id)
+                button.classList.add('disabled')
+            }
+        })
     }
 
     private findLettersInGuessedWord(id: string): void {
